@@ -14,7 +14,10 @@ class Home extends Component{
     render(){
         return(
             <div>
-
+                <div className="left">
+                    <Link to="/home/Mymusic">我的音乐</Link>
+                    <Link to="/home/">音乐馆</Link>
+                </div>
 
                 {
                     this.props.routes.map((route,key)=>{

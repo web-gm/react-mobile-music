@@ -11,10 +11,7 @@ class App extends Component {
           <Router>
 
               <div>
-                  <div className="left">
-                      <Link to="/home/Mymusic">我的音乐</Link>
-                      <Link to="/home/">音乐馆</Link>
-                  </div>
+
                   {
                       routes.map((route,key)=>{
                           if(route.exact){

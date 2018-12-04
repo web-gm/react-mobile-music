@@ -7,9 +7,8 @@ import MusicAll from '../components/MusicAll';
 
 let routes = [
     {
-        path: "/",
+        path: "/home",
         component: Home,
-        redirect:'/home',
         routes:[   /*嵌套路由*/
             {
                 path: "/home/Mymusic",
@@ -17,7 +16,6 @@ let routes = [
             },
             {
                 path: "/home/",
-                exact:true,
                 component: MusicAll
             },
 
