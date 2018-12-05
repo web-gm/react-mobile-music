@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
+import { Route, NavLink  } from "react-router-dom";
+import { NavBar, Icon } from 'antd-mobile';
+import '@/common/less/home.less'
 class Home extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            msg:'我是一个User组件'
         };
     }
     componentWillMount(){
@@ -14,10 +14,22 @@ class Home extends Component{
     render(){
         return(
             <div>
-                <div className="left">
-                    <Link to="/home/Mymusic">我的音乐</Link>
-                    <Link to="/home/">音乐馆</Link>
-                </div>
+                <NavBar
+                    mode="dark"
+                    icon={<Icon type="ellipsis" />}
+                    onLeftClick={() => console.log('onLeftClick')}
+                    rightContent={[
+                        <Icon key="0" type="search" />,
+                    ]}
+                >
+                    <NavLink  to="/home/Mymusic" activeStyle={{
+                        fontWeight: "bold",
+                    }}>我的</NavLink >
+                    <NavLink  to="/home/all" activeStyle={{
+                        fontWeight: "bold",
+                    }}>音乐馆</NavLink >
+                </NavBar>
+
 
                 {
                     this.props.routes.map((route,key)=>{

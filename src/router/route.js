@@ -12,10 +12,12 @@ let routes = [
         routes:[   /*嵌套路由*/
             {
                 path: "/home/Mymusic",
-                component: Mymusic
+                component: Mymusic,
+                exact:true,
             },
             {
-                path: "/home/",
+                path: "/home/all",
+                exact:true,
                 component: MusicAll
             },
 

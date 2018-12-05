@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '@/common/less/App.less';
-import {BrowserRouter as Router, Link, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import routes from '@/router/route'
 
 class App extends Component {
