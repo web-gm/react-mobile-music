@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Grid } from 'antd-mobile';
-
 const data = [{
     icon:'',
     text:'本地音乐'
 },{
-    icon:'',
+    icon:'@/common/',
     text:'下载音乐'
 },
     {

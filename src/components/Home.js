@@ -14,7 +14,7 @@ class Home extends Component{
     render(){
         return(
             <div>
-                <NavBar
+                 <NavBar
                     mode="dark"
                     icon={<Icon type="ellipsis" />}
                     onLeftClick={() => console.log('onLeftClick')}
