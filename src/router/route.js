@@ -2,7 +2,8 @@
 import Home from '../components/Home';
 import Mymusic from '../components/Mymusic';
 import MusicAll from '../components/MusicAll';
-
+import SingerList from '../components/singger/SingerList'
+import SingerDetail from '../components/singger/SingerDetail'
 
 
 let routes = [
@@ -23,7 +24,18 @@ let routes = [
 
         ]
     },
-
+    {
+        path:'/singerList',
+        component:SingerList,
+        exact:true,
+        
+    },
+    {
+        path:'/singerDetail/:id',
+        component:SingerDetail,
+        exact:true,
+        
+    }
 
 
 ];

@@ -4,10 +4,13 @@ class SingerDetail extends Component {
         super(props);
         this.state = {  };
     }
+    componentWillMount=()=>{
+        console.log(this.props.match.params)
+    }
     render() {
         return (
             <div>
-                
+                歌手详情
             </div>
         );
     }
