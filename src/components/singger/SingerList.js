@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
 
 import get_singerList from '@/api/get_singerList.js'
+import LazyLoad from 'react-lazyload';
 import '@/common/less/singerlist.less'
-import { ListView } from 'antd-mobile'
-function MyBody(props) {
-    return (
-        <div className="am-list-body my-body">
-            <span style={{ display: 'none' }}>you can custom body wrap element</span>
-            {props.children}
-        </div>
-    );
-}
+
 class SingerList extends Component {
     constructor(props) {
         super(props);
@@ -63,6 +56,10 @@ class SingerList extends Component {
             that.get_singerList(that.state.area,that.state.sex,that.state.genre,that.state.sin,that.state.cur_page)
         })
     }
+    link_change=(id,img)=>{
+        console.log(id,img)
+        this.props.history.push({ pathname : `/singerDetail/${id}`})
+    }
     componentWillMount=()=>{
         var that = this
         window.addEventListener('scroll',function(e){
@@ -85,8 +82,9 @@ class SingerList extends Component {
         this.get_singerList(that.state.area,that.state.sex,that.state.genre,that.state.sin,that.state.cur_page)
     }
     render() {
+        let self = this
         return (
-            <div>
+            <div className='singer-list'>
                 <header>
                    <div className='tag-parent'>
                        <ul className='tag-wrap' style={{width:22*this.state.tag_area_data.length+'vw'}}>
@@ -129,10 +127,22 @@ class SingerList extends Component {
                         {
                             this.state.singer_data.map(function (item) {
                                 return(
-                                    <li key={item.singer_id} style={{height:15+'vw',padding:2+'vw',lineHeight:15+'vw'}}>
-                                        <img src={item.singer_pic} alt="" style={{width:15+'vw',borderRadius:50+'%'}}/>
-                                        <span>{item.singer_name}</span>
-                                    </li>
+                                        <li key={item.singer_id}
+                                            style={{height:15+'vw',padding:2+'vw',lineHeight:15+'vw'}}
+                                            onClick={()=>self.link_change(item.singer_mid,item.singer_pic)}
+                                        >
+                                            <LazyLoad height={200} once >
+
+                                                <div>
+                                                    <img src={item.singer_pic}
+                                                         alt=""
+                                                         style={{width:15+'vw',borderRadius:50+'%'}} />
+                                                    <span>{item.singer_name}</span>
+                                                </div>
+                                            </LazyLoad>
+
+                                        </li>
+
                                 )
                             })
                         }

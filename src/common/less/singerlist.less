@@ -1,45 +1,48 @@
-.tag-parent{
-  width: 100vw;
-  overflow: auto;
-  background-color: #f8f8f8;
-  .tag-wrap{
-    word-wrap: normal;
+.singer-list{
+  .tag-parent{
+    width: 100vw;
     overflow: auto;
-    list-style: none;
-    height: 35px;
-    line-height: 35px;
-    margin: 0;
-    padding: 0;
+    background-color: #f8f8f8;
+    .tag-wrap{
+      word-wrap: normal;
+      overflow: auto;
+      list-style: none;
+      height: 35px;
+      line-height: 35px;
+      margin: 0;
+      padding: 0;
 
+      li{
+        width: 22vw;
+        display: inline-block;
+        text-align: center;
+        &.active{
+          color: #31c27c;
+        }
+        &:active{
+          background-color: #e8e8e8;
+        }
+      }
+    }
+  }
+  .singerList{
+    list-style: none;
     li{
-      width: 22vw;
-      display: inline-block;
-      text-align: center;
-      &.active{
-        color: #31c27c;
+      height: 15vw;
+      line-height: 15vw;
+      padding: 2vw;
+      img{
+        width: 15vw;
+        border-radius: 50%;
+        float: left;
       }
-      &:active{
-        background-color: #e8e8e8;
+      span{
+        padding-left: 5vw;
+        width: 75vw;
+        float: left;
+        border-bottom: 1px solid #f8f8f8;
       }
     }
   }
-}
-.singerList{
-  list-style: none;
-  li{
-    height: 15vw;
-    line-height: 15vw;
-    padding: 2vw;
-    img{
-      width: 15vw;
-      border-radius: 50%;
-      float: left;
-    }
-    span{
-      padding-left: 5vw;
-      width: 75vw;
-      float: left;
-      border-bottom: 1px solid #f8f8f8;
-    }
-  }
+
 }
