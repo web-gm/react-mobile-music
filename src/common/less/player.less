@@ -1,0 +1,49 @@
+.player{
+  position: fixed;
+  bottom: 0;
+  height: 45px;
+  display: flex;
+  width: 100vw;
+  background-color: #fff;
+  .p-img{
+    flex-grow: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .p-singer-name{
+    flex-grow:8;
+  }
+  .p-btn{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button{
+      border: none;
+      background: url("../images/player/landscape_player_btn_play_normal.png") no-repeat center;
+      width: 40px;
+      height: 40px;
+      background-size: 100% auto;
+
+      &.playing{
+        background: url("../images/player/landscape_player_btn_pause_normal.png") no-repeat center;
+        background-size: 100% auto;
+      }
+    }
+  }
+  .p-list{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button{
+      border: none;
+      background: url("../images/player/minibar_btn_playlist_normal.png") no-repeat center;
+      width: 40px;
+      height: 40px;
+      background-size: 100% auto;
+
+    }
+  }
+}

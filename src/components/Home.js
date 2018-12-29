@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Route, NavLink  } from "react-router-dom";
 import { NavBar, Icon } from 'antd-mobile';
 import '@/common/less/home.less'
+import Player from '@/components/Player'
 class Home extends Component{
     constructor(props) {
         super(props);
@@ -36,7 +37,7 @@ class Home extends Component{
                         return   <Route key={key} exact path={route.path} component={route.component} />
                     })
                 }
-
+                <Player/>
             </div>
         )
     }
