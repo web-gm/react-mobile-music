@@ -1,8 +1,13 @@
-import {observable} from 'mobx'
+import {observable, action} from 'mobx'
 
-class player {
-    status='1'
-    playList=[]
-    currentTime=''
-    index=1
+class PlayerStore {
+    @observable status = '1'
+    @observable playList = []
+    @observable currentTime = ''
+    @observable index = 1
+    @observable player = new window.Player({'target':'web'});
+    @observable target = "web";
+
+
 }
+export default new PlayerStore()
